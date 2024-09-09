@@ -1,30 +1,9 @@
+import { operationsData, calcData } from "./data.js"
+
 const display = document.getElementById('display')
 const equal = document.getElementById('equal')
 const operations = document.querySelectorAll('.operation')
 const numbers = document.querySelectorAll('.btn-number')
-
-const calcData = {
-  firstNumber: "",
-  secondNumber: "",
-  isSecondNumber: false,
-  currentOperation: null,
-  result: 0
-}
-
-const operationsData = {
-  'add': function(a,b) {
-    return a + b
-  },
-  'subs': function(a,b) {
-    return a - b
-  },
-  'multi': function(a,b) {
-    return a * b
-  }, 
-  'div': function(a,b) {
-    return a / b
-  }
-}
 
 function operation(firstNumber, secondNumber, operation) {
   const transformedNumber = parseFloat(firstNumber)
@@ -33,7 +12,7 @@ function operation(firstNumber, secondNumber, operation) {
   display.innerText = result
   calcData.firstNumber = result.toString()
   calcData.secondNumber = ""
-  calcData.isSecondNumber = true
+  calcData.isSecondNumber = false
   calcData.currentOperation = null
 }
 
